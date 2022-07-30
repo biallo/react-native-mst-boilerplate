@@ -1,0 +1,38 @@
+{
+  "name": "react-native-mst-boilerplate",
+  "version": "1.0.0",
+  "description": "一个使用 react-native, mobx-state-tree 的简单样板",
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:biallo/react-native-mst-boilerplate.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "mobx": "^6.6.1",
+    "mobx-react": "^7.5.2",
+    "mobx-state-tree": "^5.1.5",
+    "react": "18.0.0",
+    "react-native": "0.69.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.70.3",
+    "react-test-renderer": "18.0.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
