@@ -3,8 +3,11 @@
 
 ## 项目依赖
 - <a href="https://reactnative.dev" target="_blank">React Native</a>
-- <a href="https://mobx-state-tree.js.org" target="_blank">MobX-State-Tree</a>
-
+- <a href="https://mobx-state-tree.js.org" target="_blank">MobX State Tree</a>
+- <a href="https://reactnavigation.org" target="_blank">React Navigation</a>
+- <a href="https://github.com/zoontek/react-native-localize" target="_blank">React Native Localize</a>
+- <a href="https://github.com/oblador/react-native-vector-icons" target="_blank">React Native Vector Icons</a>
+- <a href="https://github.com/axios/axios" target="_blank">Axios</a>
 
 ## 环境依赖
 
@@ -58,6 +61,27 @@ npm run android
 npm run start
 ```
 
+## 多语言
+
+
 ## 项目重命名
 
 推荐使用 <a href="https://github.com/junedomingo/react-native-rename" target="_blank">react-native-rename</a>
+
+## 替换应用图标
+
+#### iOS
+
+```
+./ios/ReactNativeMSTBoilerplate/Images.xcassets/AppIcon.appiconset
+
+替换目录中的图片资源即可
+```
+
+#### Android
+
+```
+./android/app/src/main/res
+
+替换 mipmap-* 文件夹中的图片资源即可
+```
