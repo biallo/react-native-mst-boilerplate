@@ -64,7 +64,9 @@ npm run start
 ```
 
 ## 多语言
+
 在 `./translations` 目录下可添加、修改语言。
+
 在 `./utils/Constants.js` 中，`LANGUAGES` 字段对应「选择语言」功能中的内容，`LOCALE` 字段对应 `./utils/axios/AxiosConfig.js` 中针对后端规则的内容。
 
 
