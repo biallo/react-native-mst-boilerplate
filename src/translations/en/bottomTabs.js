@@ -1,5 +1,6 @@
 export default {
   home: 'Home',
   user: 'User',
-  setting: 'Setting'
+  setting: 'Setting',
+  web: 'Web'
 };

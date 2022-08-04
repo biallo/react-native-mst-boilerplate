@@ -8,5 +8,6 @@ export default {
   accountLocation: 'Location',
   accountIp: 'IP Address',
   accountTime: 'Time',
-  selectLanguage: 'Select language'
+  selectLanguage: 'Select language',
+  web: 'Web'
 };

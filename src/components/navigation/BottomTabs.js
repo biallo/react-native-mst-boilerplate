@@ -28,6 +28,10 @@ const BottomTabs: () => Node = (props) => {
     label: 'user',
     icon: 'account'
   }, {
+    name: 'Web',
+    label: 'web',
+    icon: 'web'
+  }, {
     name: 'Setting',
     label: 'setting',
     icon: 'cog'

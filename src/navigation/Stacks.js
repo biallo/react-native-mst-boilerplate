@@ -16,6 +16,7 @@ import Login from '../screens/auth/Login';
 import Home from '../screens/home/Home';
 import User from '../screens/user/User';
 import Setting from '../screens/setting/Setting';
+import Web from '../screens/web/Web';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,7 @@ const Stacks: () => Node = (props) => {
       <>
         <Stack.Screen name="/" component={Home} />
         <Stack.Screen name="User" component={User} />
+        <Stack.Screen name="Web" component={Web} />
         <Stack.Screen name="Setting" component={Setting} />
       </>
     );

@@ -8,5 +8,6 @@ export default {
   accountLocation: '所在地',
   accountIp: 'IP 地址',
   accountTime: '时间',
-  selectLanguage: '选择语言'
+  selectLanguage: '选择语言',
+  web: '网页'
 };
