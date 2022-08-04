@@ -20,9 +20,9 @@ export const axiosAuth = axios.create({
 });
 
 export const resetAxiosAuth = () => {
-  axiosAuth.interceptors.request.use((requestConfig) => {
+  axiosAuth.interceptors.request.use(async (requestConfig) => {
     requestConfig.headers['Authorization'] = getAuthToken();
-    requestConfig.headers['accept-language'] = getAuthToken();
+    requestConfig.headers['accept-language'] = await getLanguage();
     return requestConfig;
   });
 };

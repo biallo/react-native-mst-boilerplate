@@ -15,6 +15,7 @@ import {
 import Login from '../screens/auth/Login';
 import Home from '../screens/home/Home';
 import User from '../screens/user/User';
+import Setting from '../screens/setting/Setting';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,15 +27,16 @@ const Stacks: () => Node = (props) => {
     if (!token) {
       return (
         <>
-          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="/" component={Login} />
         </>
       );
     }
 
     return (
       <>
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="/" component={Home} />
         <Stack.Screen name="User" component={User} />
+        <Stack.Screen name="Setting" component={Setting} />
       </>
     );
   };

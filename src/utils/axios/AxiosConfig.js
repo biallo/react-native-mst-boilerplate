@@ -1,17 +1,21 @@
-import { Alert } from "react-native";
+import {name as appName} from '../../../app.json';
+import { Alert } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Store } from '../../stores';
 import { LOCALE } from '../Constants';
+import Keys from '../../config/Keys';
 
-export function getAuthToken() {
-  return Store.auth.token;
+export const getAuthToken = () => {
+  return Store.auth.userInfo.token;
+};
+
+export const getLanguage = async () => {
+  const code = await AsyncStorage.getItem(`${appName}_LANGUAGE_${Keys.storeVersion}`);
+  // 用于通知后端当前应用使用的语言，可根据后端的规则在 ../Constants.js 中进行配置
+  return LOCALE[code];
 }
 
-export function getLanguage() {
-  // 用于通知后端当前应用使用的语言，可根据后端的
-  return LOCALE[Store.language.locale];
-}
-
-export function getResult(response) {
+export const getResult = (response) => {
   if (Store && response) {
     const data = response.data;
 
@@ -33,7 +37,7 @@ export function getResult(response) {
   }
 }
 
-export function getErrorObject(response) {
+export const getErrorObject = (response) => {
   let errorCode = 'unknown';
   let errorMessage = '';
   const statusCode = response ? response.status : -1;
@@ -48,7 +52,7 @@ export function getErrorObject(response) {
   };
 }
 
-export function reactOnStatusCode(error) {
+export const reactOnStatusCode = (error) => {
   if (Store && error) {
     switch (error.status) {
       case 400:

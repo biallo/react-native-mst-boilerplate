@@ -12,13 +12,14 @@ import {
   Text
 } from 'react-native';
 import moment from 'moment-timezone';
-import { ACCOUNT_ACTIVITIES_TYPE } from '../../utils/Constants';
+import { useTranslation } from 'react-i18next';
 import { V } from '../../styles';
 import BottomTabs from '../../components/navigation/BottomTabs';
 
 const User: () => Node = (props) => {
   const { store, navigation } = props;
   const { id } = store.auth.userInfo;
+  const { t } = useTranslation();
   const [activities, setActivities] = useState();
 
   useEffect(() => {
@@ -29,7 +30,7 @@ const User: () => Node = (props) => {
 
   const fetchData = async () => {
     await store.user.getActivities({
-      id: id
+      uid: id
     });
     setActivities(store.user.activities);
   };
@@ -41,7 +42,7 @@ const User: () => Node = (props) => {
   return (
     <SafeAreaView style={V.wrapper}>
       <ScrollView>
-        <Text style={{ textAlign: 'center' }}>账户活动</Text>
+        <Text style={styles.subTitle}>{t('common:accountActivities')}</Text>
         <View style={styles.listWrapper}>
         {activities.map((item, index) => {
           return (
@@ -53,15 +54,15 @@ const User: () => Node = (props) => {
                 <Text
                   style={styles.listHelperText}
                 >
-                  类型
+                  {t('common:accountType')}
                 </Text>
-                <Text>{ACCOUNT_ACTIVITIES_TYPE[item.actionType]}</Text>
+                <Text>{t(`common:accountType${item.actionType}`)}</Text>
               </View>
               <View style={styles.listItem}>
                 <Text
                   style={styles.listHelperText}
                 >
-                  所在地
+                  {t('common:accountLocation')}
                 </Text>
                 <Text>{item.location}</Text>
               </View>
@@ -69,7 +70,7 @@ const User: () => Node = (props) => {
                 <Text
                   style={styles.listHelperText}
                 >
-                  IP 地址
+                  {t('common:accountIp')}
                 </Text>
                 <Text>{item.ip}</Text>
               </View>
@@ -77,54 +78,7 @@ const User: () => Node = (props) => {
                 <Text
                   style={styles.listHelperText}
                 >
-                  时间
-                </Text>
-                <Text>
-                  {
-                    moment(item.createdTime)
-                      .utcOffset(8)
-                      .format('YYYY-MM-DD HH:mm:ss')
-                  }
-                </Text>
-              </View>
-            </View>
-          );
-        })}
-        {activities.map((item, index) => {
-          return (
-            <View
-              key={item.id}
-              style={styles.listRow}
-            >
-              <View style={styles.listItem}>
-                <Text
-                  style={styles.listHelperText}
-                >
-                  类型
-                </Text>
-                <Text>{ACCOUNT_ACTIVITIES_TYPE[item.actionType]}</Text>
-              </View>
-              <View style={styles.listItem}>
-                <Text
-                  style={styles.listHelperText}
-                >
-                  所在地
-                </Text>
-                <Text>{item.location}</Text>
-              </View>
-              <View style={styles.listItem}>
-                <Text
-                  style={styles.listHelperText}
-                >
-                  IP 地址
-                </Text>
-                <Text>{item.ip}</Text>
-              </View>
-              <View style={styles.listItem}>
-                <Text
-                  style={styles.listHelperText}
-                >
-                  时间
+                  {t('common:accountTime')}
                 </Text>
                 <Text>
                   {
@@ -148,9 +102,14 @@ const User: () => Node = (props) => {
 };
 
 const styles = StyleSheet.create({
+  subTitle: {
+    marginTop: 10,
+    paddingHorizontal: 15,
+    textAlign: 'left'
+  },
   listWrapper: {
     flex: 1,
-    marginTop: 15,
+    marginTop: 20,
     paddingHorizontal: 15
   },
   listRow: {

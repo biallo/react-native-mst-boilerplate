@@ -12,11 +12,13 @@ import {
   TouchableOpacity,
   Alert
 } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { V } from '../../styles';
 import { checkEmail } from '../../utils/Validate';
 
 const Login: () => Node = (props) => {
   const { store } = props;
+  const { t } = useTranslation();
   const [email, setEmail] = useState();
   const [pwd, setPwd] = useState();
   const [submitDisabled, setSubmitDisabled] = useState(true);
@@ -35,12 +37,12 @@ const Login: () => Node = (props) => {
     }
 
     if (!checkEmail(email)) {
-      Alert.alert('请输入合规的邮箱');
+      Alert.alert(t('auth:emailError1'));
       return;
     }
 
     if (pwd.length < 8 || pwd.length > 32) {
-      Alert.alert('请输入合规的密码');
+      Alert.alert(t('auth:pwdError1'));
       return;
     }
 
@@ -55,7 +57,7 @@ const Login: () => Node = (props) => {
 
       await store.auth.updateAccount(data);
 
-      Alert.alert('登录成功！');
+      Alert.alert(t('auth:loginSuccess'));
     }
   };
 
@@ -65,7 +67,7 @@ const Login: () => Node = (props) => {
         style={V.formInput}
         value={email}
         onChangeText={setEmail}
-        placeholder="邮箱"
+        placeholder={t('auth:email')}
         keyboardType="email-address"
         autoCapitalize="none"
       />
@@ -75,7 +77,7 @@ const Login: () => Node = (props) => {
         value={pwd}
         onChangeText={setPwd}
         secureTextEntry={true}
-        placeholder="密码"
+        placeholder={t('auth:pwd')}
       />
 
       <TouchableOpacity
@@ -85,7 +87,7 @@ const Login: () => Node = (props) => {
         <Text
           style={submitDisabled ? V.btnDisabledText : V.btnPrimaryText}
         >
-          登录
+          {t('auth:login')}
         </Text>
       </TouchableOpacity>
     </SafeAreaView>

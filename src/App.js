@@ -14,6 +14,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Store, createStore } from './stores';
 import NavigationService from './navigation/NavigationService';
 import Stacks from './navigation/Stacks';
+import './translations';
 import { V } from './styles';
 
 const App: () => Node = () => {

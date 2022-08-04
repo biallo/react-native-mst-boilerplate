@@ -9,13 +9,11 @@ import { Platform } from 'react-native';
 import { resetAxiosAuth, resetAxiosOpen } from '../utils/axios';
 import Keys from '../config/Keys';
 
-import { Language as language } from './language';
 import { Auth as auth } from './auth';
 import { User as user } from './user';
 
 export const Store = types
   .model('Store', {
-    language,
     auth,
     user
   })
@@ -33,7 +31,6 @@ export const Store = types
     })
   }))
   .create({
-    language: {},
     auth: {},
     user: {}
   });

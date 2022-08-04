@@ -2,12 +2,14 @@
 一个使用 react-native, mobx-state-tree 的简单样板
 
 ## 项目依赖
-- <a href="https://reactnative.dev" target="_blank">React Native</a>
-- <a href="https://mobx-state-tree.js.org" target="_blank">MobX State Tree</a>
-- <a href="https://reactnavigation.org" target="_blank">React Navigation</a>
-- <a href="https://github.com/zoontek/react-native-localize" target="_blank">React Native Localize</a>
-- <a href="https://github.com/oblador/react-native-vector-icons" target="_blank">React Native Vector Icons</a>
-- <a href="https://github.com/axios/axios" target="_blank">Axios</a>
+- <a href="https://reactnative.dev" target="_blank">react-native</a>
+- <a href="https://mobx-state-tree.js.org" target="_blank">mobx-state-tree</a>
+- <a href="https://reactnavigation.org" target="_blank">react-navigation</a>
+- <a href="https://github.com/zoontek/react-native-localize" target="_blank">react-native-localize</a>
+- <a href="https://github.com/i18next/i18next" target="_blank">i18next</a>
+- <a href="https://github.com/i18next/react-i18next" target="_blank">react-i18next</a>
+- <a href="https://github.com/oblador/react-native-vector-icons" target="_blank">react-native-vector-icons</a>
+- <a href="https://github.com/axios/axios" target="_blank">axios</a>
 
 ## 环境依赖
 
@@ -62,6 +64,9 @@ npm run start
 ```
 
 ## 多语言
+在 `./translations` 目录下可添加、修改语言。
+在 `./utils/Constants.js` 中，`LANGUAGES` 字段对应「选择语言」功能中的内容，`LOCALE` 字段对应 `./utils/axios/AxiosConfig.js` 中针对后端规则的内容。
+
 
 
 ## 项目重命名

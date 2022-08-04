@@ -1,6 +1,7 @@
+import Urls from '../config/Urls';
 import { axiosAuth, axiosOpen } from '../utils/axios';
 
-const API = process.env.API;
+const API = Urls.API;
 
 export default {
   getActivities: (params) =>

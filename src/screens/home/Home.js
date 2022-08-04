@@ -13,37 +13,46 @@ import {
   Text,
   TouchableOpacity
 } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import Images from '../../assets/Images';
 import { V } from '../../styles';
 import BottomTabs from '../../components/navigation/BottomTabs';
 
 const Home: () => Node = (props) => {
   const { store, navigation } = props;
+  const { t } = useTranslation();
 
   const handleLogout = async () => {
     await store.auth.removeAccount();
-    navigation.navigate('Login');
+    navigation.navigate('/');
   };
 
   return (
     <SafeAreaView style={V.wrapper}>
       <ScrollView style={{ flex: 1 }}>
+        <Text style={styles.subTitle}>{t('common:home')}</Text>
+
         <View style={styles.logoContainer}>
           <Image
             source={Images.logo}
             style={styles.logo}
           />
-          <Text>首页</Text>
+          <Text>
+            React Native
+          </Text>
         </View>
 
         <TouchableOpacity
-          style={V.btnCancel}
+          style={[
+            styles.btn,
+            V.btnCancel
+          ]}
           onPress={handleLogout}
         >
           <Text
             style={V.btnCancelText}
           >
-            登出
+            {t('common:logout')}
           </Text>
         </TouchableOpacity>
       </ScrollView>
@@ -56,15 +65,24 @@ const Home: () => Node = (props) => {
 };
 
 const styles = StyleSheet.create({
+  subTitle: {
+    marginTop: 10,
+    paddingHorizontal: 15,
+    textAlign: 'left'
+  },
   logoContainer: {
     flex: 1,
     alignItems: 'center',
+    marginTop: 20,
     paddingHorizontal: 15
   },
   logo: {
     width: 80,
     height: 80,
-    marginVertical: 20
+    marginVertical: 10
+  },
+  btn: {
+    marginTop: 30
   }
 });
 

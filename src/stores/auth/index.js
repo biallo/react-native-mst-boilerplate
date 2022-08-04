@@ -32,7 +32,7 @@ export const Auth = types
     },
     checkNeedLogin(redirectTo) {
       if (!self.isAuthorized) {
-        NavigationService.navigate('Login', { redirectTo });
+        NavigationService.navigate('/', { redirectTo });
       }
       return !self.isAuthorized;
     },
@@ -40,7 +40,7 @@ export const Auth = types
       self.removeAccount();
 
       if (jumpToLogin) {
-        NavigationService.navigate('Login');
+        NavigationService.navigate('/');
       }
     },
     async removeAccount() {

@@ -12,11 +12,26 @@ import {
 } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useTranslation } from 'react-i18next';
 import { C, V } from '../../styles';
 
 const BottomTabs: () => Node = (props) => {
   const { store, navigation } = props;
+  const { t } = useTranslation();
   const route = useRoute();
+  const TABS = [{
+    name: '/',
+    label: 'home',
+    icon: 'home'
+  }, {
+    name: 'User',
+    label: 'user',
+    icon: 'account'
+  }, {
+    name: 'Setting',
+    label: 'setting',
+    icon: 'cog'
+  }];
 
   const goTo = (name) => {
     if (name === route.name) {
@@ -26,58 +41,37 @@ const BottomTabs: () => Node = (props) => {
     navigation.navigate(name);
   };
 
+  const handleActive = (name) => {
+    return route.name === name ? styles.active : '';
+  };
+
   return (
     <View style={styles.tabsWrapper}>
-      <View style={styles.tabsItem}>
-        <TouchableOpacity
-          onPress={() => goTo('Home')}
-        >
-          <Icons
-            name='home'
-            style={[
-              styles.tabsIcon,
-              route.name === 'Home'
-              ? styles.active
-              : ''
-            ]}
-          />
-          <Text
-            style={[
-              styles.tabsText,
-              route.name === 'Home'
-              ? styles.active
-              : ''
-            ]}
-          >
-            首页
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.tabsItem}>
-        <TouchableOpacity
-          onPress={() => goTo('User')}
-        >
-          <Icons
-            name='account'
-            style={[
-              styles.tabsIcon,
-              route.name === 'User'
-              ? styles.active
-              : ''
-            ]}
-          />
-          <Text
-            style={[
-              styles.tabsText,
-              route.name === 'User'
-              ? styles.active
-              : ''
-            ]}
-          >
-            用户
-          </Text>
-        </TouchableOpacity>
-      </View>
+      {TABS.map((item, index) => {
+        return (
+          <View key={index} style={styles.tabsItem}>
+            <TouchableOpacity
+              onPress={() => goTo(item.name)}
+            >
+              <Icons
+                name={item.icon}
+                style={[
+                  styles.tabsIcon,
+                  handleActive(item.name)
+                ]}
+              />
+              <Text
+                style={[
+                  styles.tabsText,
+                  handleActive(item.name)
+                ]}
+              >
+                {t(`bottomTabs:${item.label}`)}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        );
+      })}
     </View>
   );
 };
@@ -86,7 +80,7 @@ const styles = StyleSheet.create({
   tabsWrapper: {
     flexWrap: 'wrap',
     flexDirection: 'row',
-    height: 50,
+    height: 55,
     borderTopWidth: 1,
     borderColor: '#eee'
   },
