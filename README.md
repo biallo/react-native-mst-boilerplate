@@ -1,95 +1,100 @@
 # react-native-mst-boilerplate
-一个使用 react-native, mobx-state-tree 的简单样板
 
-## 项目依赖
-- <a href="https://reactnative.dev" target="_blank">react-native</a>
-- <a href="https://mobx-state-tree.js.org" target="_blank">mobx-state-tree</a>
-- <a href="https://reactnavigation.org" target="_blank">react-navigation</a>
-- <a href="https://github.com/zoontek/react-native-localize" target="_blank">react-native-localize</a>
-- <a href="https://github.com/i18next/i18next" target="_blank">i18next</a>
-- <a href="https://github.com/i18next/react-i18next" target="_blank">react-i18next</a>
-- <a href="https://github.com/oblador/react-native-vector-icons" target="_blank">react-native-vector-icons</a>
-- <a href="https://github.com/axios/axios" target="_blank">axios</a>
-- <a href="https://github.com/react-native-webview/react-native-webview" target="_blank">react-native-webview</a>
+A boilerplate using React-Native, Mobx-State-Tree
 
-## 环境依赖
+## Language
 
-请参考 <a href="https://reactnative.dev/docs/environment-setup" target="_blank">React Native Environment Setup</a> 配置好 iOS、Android 的开发环境。 
+- [中文](README.zh.md)
+- English
 
-确保环境中的 node.js 版本不低于 v14
+## Project dependencies
+
+- [React-Native](https://reactnative.dev)
+- [Mobx-State-Tree](https://mobx-state-tree.js.org)
+- [React-Navigation](https://reactnavigation.org)
+- [React-Native-Localize](https://github.com/zoontek/react-native-localize)
+- [React-I18next](https://github.com/i18next/react-i18next)
+- [React-Native-Vector-Icons](https://github.com/oblador/react-native-vector-icons)
+- [React-Native-Webview](https://github.com/react-native-webview/react-native-webview)
+
+## Project dev dependencies
+
+Please refer to [React Native Environment Setup](https://reactnative.dev/docs/environment-setup) to configure the development environment for iOS and Android.
+
+Make sure you have Node.js >= 14.0.0 installed on your machine.
 
 
-#### 安装依赖的 node_modules
+## Installation
 
 ```
 npm install
 ```
 
-#### 安装 iOS 的依赖
+## iOS
 
-需要先安装 cocoapods 
+Install cocoapods first
 
 ```
-// 如果环境中有大于等于 2.7.5 版本的 ruby，可使用 gem 方式安装
+// If there is a ruby version greater than or equal to 2.7.5 in the environment, you can use gem to install it
 sudo gem install cocoapods
 
-// 或者使用 brew 安装
+// Or use brew
 brew install cocoapods
 ```
 
-安装好 cocoapods 后，从项目根目录切换到 ios 目录
+After installing cocoapods, switch from the project root directory to the ios directory
 
 ```
 cd ios
 pod install
 ```
 
-## 开发
+## Development
 
-在 iOS 模拟器中查看效果
+iOS Simulator
 
 ```
 npm run ios
 ```
 
-在 Android 模拟器中查看效果
+Android Simulator
 
 ```
 npm run android
 ```
 
-只启动 Metro
+Launch Metro Only
 
 ```
 npm run start
 ```
 
-## 多语言
+## I18n
 
-在 `./translations` 目录下可添加、修改语言。
+Languages can be added and modified in the `./translations` directory.
 
-在 `./utils/Constants.js` 中，`LANGUAGES` 字段对应「选择语言」功能中的内容，`LOCALE` 字段对应 `./utils/axios/AxiosConfig.js` 中针对后端规则的内容。
+In `./utils/Constants.js`, the `LANGUAGES` field corresponds to the content in the "select language" function, and the `LOCALE` field corresponds to the content in `./utils/axios/AxiosConfig.js` for backend rules.
 
 
 
-## 项目重命名
+## Rename the project
 
-推荐使用 <a href="https://github.com/junedomingo/react-native-rename" target="_blank">react-native-rename</a>
+Recommended Use [React-Native-Rename](https://github.com/junedomingo/react-native-rename)
 
-## 替换应用图标
+## Replace app icon
 
 #### iOS
 
+Replace the image resource in the directory
+
 ```
 ./ios/ReactNativeMSTBoilerplate/Images.xcassets/AppIcon.appiconset
-
-替换目录中的图片资源即可
 ```
 
 #### Android
 
+Replace the image resources in the mipmap-* folder
+
 ```
 ./android/app/src/main/res
-
-替换 mipmap-* 文件夹中的图片资源即可
 ```
