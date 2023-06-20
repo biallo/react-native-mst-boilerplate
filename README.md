@@ -85,7 +85,7 @@ Recommended Use [React-Native-Rename](https://github.com/junedomingo/react-nativ
 
 #### iOS
 
-Replace the image resource in the directory
+Replace the image resources in the directory
 
 ```
 ./ios/ReactNativeMSTBoilerplate/Images.xcassets/AppIcon.appiconset
