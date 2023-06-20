@@ -1,5 +1,4 @@
 import React, {
-  Node,
   useState,
   useEffect
 } from 'react';
@@ -15,7 +14,7 @@ import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTranslation } from 'react-i18next';
 import { C, V } from '../../styles';
 
-const BottomTabs: () => Node = (props) => {
+const BottomTabs = (props) => {
   const { store, navigation } = props;
   const { t } = useTranslation();
   const route = useRoute();

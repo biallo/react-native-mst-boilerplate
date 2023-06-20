@@ -18,8 +18,8 @@ import { checkEmail } from '../../utils/Validate';
 const Login = (props) => {
   const { store } = props;
   const { t } = useTranslation();
-  const [email, setEmail] = useState();
-  const [pwd, setPwd] = useState();
+  const [email, setEmail] = useState('example@example.com');
+  const [pwd, setPwd] = useState('1234qwer');
   const [submitDisabled, setSubmitDisabled] = useState(true);
 
   useEffect(() => {

@@ -1,5 +1,4 @@
 import React, {
-  Node,
   useState,
   useEffect
 } from 'react';
@@ -20,7 +19,7 @@ import Web from '../screens/web/Web';
 
 const Stack = createNativeStackNavigator();
 
-const Stacks: () => Node = (props) => {
+const Stacks = (props) => {
   const { store } = props;
   const { token } = store.auth.userInfo;
 
