@@ -1,5 +1,4 @@
 import React, {
-  Node,
   useState,
   useEffect
 } from 'react';
@@ -16,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 import { V } from '../../styles';
 import { checkEmail } from '../../utils/Validate';
 
-const Login: () => Node = (props) => {
+const Login = (props) => {
   const { store } = props;
   const { t } = useTranslation();
   const [email, setEmail] = useState();

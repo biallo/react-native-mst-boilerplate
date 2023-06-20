@@ -1,5 +1,4 @@
 import React, {
-  Node,
   useState,
   useEffect
 } from 'react';
@@ -16,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 import { V } from '../../styles';
 import BottomTabs from '../../components/navigation/BottomTabs';
 
-const User: () => Node = (props) => {
+const User = (props) => {
   const { store, navigation } = props;
   const { id } = store.auth.userInfo;
   const { t } = useTranslation();

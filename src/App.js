@@ -1,6 +1,5 @@
 import { name as appName } from '../app.json';
 import React, {
-  Node,
   useState,
   useEffect
 } from 'react';
@@ -17,9 +16,8 @@ import Stacks from './navigation/Stacks';
 import './translations';
 import { V } from './styles';
 
-const App: () => Node = () => {
+const App = () => {
 
-  const [locale, setLocale] = useState();
   const [storeDone, setStoreDone] = useState(false);
 
   useEffect(() => {

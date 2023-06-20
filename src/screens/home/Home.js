@@ -1,5 +1,4 @@
 import React, {
-  Node,
   useState,
   useEffect
 } from 'react';
@@ -18,7 +17,7 @@ import Images from '../../assets/Images';
 import { V } from '../../styles';
 import BottomTabs from '../../components/navigation/BottomTabs';
 
-const Home: () => Node = (props) => {
+const Home = (props) => {
   const { store, navigation } = props;
   const { t } = useTranslation();
 
